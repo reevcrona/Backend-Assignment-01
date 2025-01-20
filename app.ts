@@ -1,6 +1,3 @@
-
-
-
 // Initial count value
 let count:number = 0;
 
@@ -10,7 +7,6 @@ const updateCountDisplay = ():void => {
     
     if(!countElement){
         console.error("Could not find countElement");
-        
     }else{
         countElement.textContent = count.toString();
     }
