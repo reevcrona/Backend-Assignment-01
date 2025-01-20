@@ -1,31 +1,41 @@
+
+
+
 // Initial count value
-let count = 0;
+let count:number = 0;
 
 // Update the count display
-const updateCountDisplay = () => {
+const updateCountDisplay = ():void => {
     const countElement = document.getElementById('count');
-    countElement.textContent = count;
+    
+    if(!countElement){
+        console.error("Could not find countElement");
+        
+    }else{
+        countElement.textContent = count.toString();
+    }
+    
 };
 
 // Increment the count
-const increment = () => {
+const increment = ():void => {
     count += 1;
     updateCountDisplay();
 };
 
 // Decrement the count
-const decrement = () => {
+const decrement = ():void => {
     count -= 1;
     updateCountDisplay();
 };
 
 // Reset the count
-const reset = () => {
+const reset = ():void => {
     count = 0;
     updateCountDisplay();
 };
 
 // Attach event listeners to buttons
-document.getElementById('increment-button').onclick = increment;
-document.getElementById('decrement-button').onclick = decrement;
-document.getElementById('reset-button').onclick = reset;
+(document.getElementById('increment-button') as HTMLElement).onclick = increment;
+(document.getElementById('decrement-button') as HTMLElement).onclick = decrement;
+(document.getElementById('reset-button') as HTMLElement).onclick = reset;
